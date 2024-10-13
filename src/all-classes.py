@@ -1,13 +1,17 @@
 #Todas las clases principales
-class veterinario:
+class Veterinario:
     def __init__(self) -> None:
         pass
-class propietario:
+    def registrarMascota():
+        pass
+    def registrarDueño():
+        pass
+class Propietario:
     def __init__(self) -> None:
         pass
-class mascota:
+class Mascota:
     def __init__(self) -> None:
         pass
-class superUsuario:
+class SuperUsuario:
     def __init__(self) -> None:
         pass
