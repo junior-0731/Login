@@ -1,10 +1,5 @@
 #Todas las clases principales
 import Datos as dt
-class Veterinario:
-    def __init__(self) -> None:
-        pass
-    def registrar_mascota():
-        pass
 class Mascota:
     def __init__(self, nombre_mascota="",color="", especie="", raza="",propi = {}):
         self.nombre_mascota= nombre_mascota
@@ -19,14 +14,16 @@ class Mascota:
             print(f"La mascota {self.nombre_mascota} ya fue registrada")
         else:
             diccionario_mascota ={
+                "ID":id_mascota,
                 "Nombre":f"{self.nombre_mascota}",
                 "Color": f"{self.color}",
                 "Especie": f"{self.especie}",
                 "Raza": f"{self.raza}",
-                "Propietario":self
+                "Propietario":self.propi['ID']
             }
+
             dt.ides_mascotas.append(id_mascota)
-            self.propi['Mascota'] = diccionario_mascota
+            self.propi['Mascota'] = diccionario_mascota["ID"]
             dt.lista_Propietarios.append(self.propi)
             dt.lista_Mascotas.append(diccionario_mascota)
 class Propietario:
@@ -47,7 +44,7 @@ class Propietario:
             'Direccion':self.direccion_Propietario,
             'Telefono':self.telefono_Propietario,
             'Correo':self.correo_Propietario,
-            'Mascota':self.mascota
+            'MascotaS': self.mascota['ID']
         }
         return diccionaro_Propietario
 
@@ -55,7 +52,7 @@ opcion = input('ELIGE UNA OPCION: ').upper()
 
 if opcion == 'A':
     mascota1= Mascota('Lucas','Rojo','Perro','Pastor')
-    propietario1 = Propietario("1313", "juan", "herrera", "urrao", "313132", "cdsfdsd",mascota={'Nombre':mascota1.nombre_mascota,'Color':mascota1.color,'Especie':mascota1.especie,'Raza':mascota1.raza})
+    propietario1 = Propietario("1313", "juan", "herrera", "urrao", "313132", "cdsfdsd",mascota={'ID':'123','Nombre':mascota1.nombre_mascota,'Color':mascota1.color,'Especie':mascota1.especie,'Raza':mascota1.raza})
     
     mascota1= Mascota('Lucas','Rojo','Perro','Pastor',propi={'ID':propietario1.id_Propietario,'Nombre':propietario1.nombre_Propietario,'Direccion':propietario1.direccion_Propietario,'Telefono':propietario1.telefono_Propietario,'Correo':propietario1.correo_Propietario})
     mascota1.registrar_Mascota()
