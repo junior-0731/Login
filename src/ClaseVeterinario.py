@@ -1,7 +1,5 @@
 #Todas las clases principales
 import Datos as dt
-id_mascotas=[]
-id_propietarios=[]
 class Veterinario:
     def __init__(self) -> None:
         pass
@@ -16,8 +14,8 @@ class Mascota:
         self.propi = propi
         
     def registrar_Mascota(self):
-        id_mascota= "121"
-        if id_mascota in id_mascotas:
+        id_mascota= "121" # se debe generar de manera random
+        if id_mascota in dt.ides_mascotas:
             print(f"La mascota {self.nombre_mascota} ya fue registrada")
         else:
             diccionario_mascota ={
@@ -25,9 +23,9 @@ class Mascota:
                 "Color": f"{self.color}",
                 "Especie": f"{self.especie}",
                 "Raza": f"{self.raza}",
-                "Propietario":self.propi
+                "Propietario":self
             }
-            
+            dt.ides_mascotas.append(id_mascota)
             self.propi['Mascota'] = diccionario_mascota
             dt.lista_Propietarios.append(self.propi)
             dt.lista_Mascotas.append(diccionario_mascota)
