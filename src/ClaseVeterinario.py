@@ -1,6 +1,6 @@
 #Todas las clases principales
 import Datos as dt
-class Mascota:
+class Mascota: #CONVERTIR ESTA CLASE A LOS METODOS DEL VETERINARIO
     def __init__(self, nombre_mascota="",color="", especie="", raza="",propi = {}):
         self.nombre_mascota= nombre_mascota
         self.color = color
@@ -17,6 +17,7 @@ class Mascota:
             "Especie": f"{self.especie}",
             "Raza": f"{self.raza}",
             "Propietario":self.propi['ID']
+            #FALTA AGREGAR LA CLAVE ID VETERINARIO CON SU VALOR
         }
 
         dt.ides_mascotas.append(id_mascota)
@@ -39,7 +40,7 @@ class Mascota:
             self.propi['Mascota'] = diccionario_mascota
             dt.lista_Propietarios.append(self.propi)
             dt.lista_Mascotas.append(diccionario_mascota)
-class Propietario:
+class Propietario: #CONVERTIR ESTA CLASE A LOS METODOS DEL VETERINARIO
     
     def __init__(self,id_Propietario = '',nombre_Propietario = '',apellidos_Propietario = '',direccion_Propietario = '',telefono_Propietario = '',correo_Propietario = '',mascota = {}):
         self.id_Propietario = id_Propietario
