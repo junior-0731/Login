@@ -20,7 +20,6 @@ class Mascota:
         if id_mascota in id_mascotas:
             print(f"La mascota {self.nombre_mascota} ya fue registrada")
         else:
-            #if diccionario["id_Propietario"] in id_propietarios:
             diccionario_mascota ={
                 "Nombre":f"{self.nombre_mascota}",
                 "Color": f"{self.color}",
@@ -29,27 +28,9 @@ class Mascota:
                 "Propietario":self.propi
             }
             
+            self.propi['Mascota'] = diccionario_mascota
             dt.lista_Propietarios.append(self.propi)
             dt.lista_Mascotas.append(diccionario_mascota)
-            
-            """ else:
-                agregar=True
-                agregar=input("Desea agregar propietario")=="si"
-                if agregar==True:
-                    diccionario_mascota ={
-                        "Nombre":f"{self.nombre_mascota}",
-                        "Color": f"{self.color}",
-                        "Especie": f"{self.especie}",
-                        "Raza": f"{self.raza}"
-                    }
-                    return diccionario_mascota
-                else:
-                    print("nada") """
-                
-            
-            
-        
-
 class Propietario:
     
     def __init__(self,id_Propietario = '',nombre_Propietario = '',apellidos_Propietario = '',direccion_Propietario = '',telefono_Propietario = '',correo_Propietario = '',mascota = {}):
@@ -68,31 +49,23 @@ class Propietario:
             'Direccion':self.direccion_Propietario,
             'Telefono':self.telefono_Propietario,
             'Correo':self.correo_Propietario,
-            'Mascota': self.mascota
+            'Mascota':self.mascota
         }
-        dt.lista_Mascotas.append(self.mascota)
-        dt.lista_Propietarios.append(diccionaro_Propietario)
+        return diccionaro_Propietario
 
-
-
-
-
-
-opcion = input('ELIGE UNA OPCION: ')
+opcion = input('ELIGE UNA OPCION: ').upper()
 
 if opcion == 'A':
     mascota1= Mascota('Lucas','Rojo','Perro','Pastor')
     propietario1 = Propietario("1313", "juan", "herrera", "urrao", "313132", "cdsfdsd",mascota={'Nombre':mascota1.nombre_mascota,'Color':mascota1.color,'Especie':mascota1.especie,'Raza':mascota1.raza})
     
-    mascota1= Mascota(propi={'ID':propietario1.id_Propietario,'Nombre':propietario1.nombre_Propietario,'Direccion':propietario1.direccion_Propietario,'Telefono':propietario1.telefono_Propietario,'Correo':propietario1.correo_Propietario})
+    mascota1= Mascota('Lucas','Rojo','Perro','Pastor',propi={'ID':propietario1.id_Propietario,'Nombre':propietario1.nombre_Propietario,'Direccion':propietario1.direccion_Propietario,'Telefono':propietario1.telefono_Propietario,'Correo':propietario1.correo_Propietario})
+    mascota1.registrar_Mascota()
     propietario1.registrar_Propietario()
-    
-    
     
 elif opcion == 'B':
     propietario1 = Propietario("1313", "edier", "Guerra","Medeliin", "1313", "qdcsc")
     mascota1= Mascota("lucas", "red", "perro", "pastor", propi={"ID":propietario1.id_Propietario, "Nombre":propietario1.nombre_Propietario, "Apellidos":propietario1.apellidos_Propietarios, "Direccion":propietario1.direccion_Propietario, "Telefono":propietario1.telefono_Propietario,"Correo": propietario1.correo_Propietario})
-    
     propietario1 = Propietario(id_Propietario="1313", nombre_Propietario="edier", apellidos_Propietario="Guerra",direccion_Propietario="Medeliin", telefono_Propietario="1313",correo_Propietario="qdcsc",mascota={"Nombre":mascota1.nombre_mascota, "Color":mascota1.color, "Especie": mascota1.especie,"Raza": mascota1.raza})
     mascota1.registrar_Mascota()
 
