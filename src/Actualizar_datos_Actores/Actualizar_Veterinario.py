@@ -12,5 +12,13 @@ def modificar_veterinario():
         else:
             break
     for i in dt.lista_Veterinarios:
-        for j in i.values():
-            print(j)
+        if i["id"]==veterinario_modificar:
+            nuevo_nombre= input("Ingresa el nuevo nombre: ")
+            nuevo_apellido = input("Ingresa el nuevo apellido: ")
+            i["Nombre"]=nuevo_nombre
+            i["Apellido"]= nuevo_apellido
+        else:
+            print("Ese id no se encuentra")
+            
+    print(dt.lista_Veterinarios)
+        
