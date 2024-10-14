@@ -1,6 +1,7 @@
 import Datos # se importo el modulo Datos
 #import re # se importo el modulo re para las expresiones regulares
 import tarjeta_Veterinario # se importa este modulo que se encarga de solicirar la tarjeta profesional
+from Actualizar_datos_Actores import Actualizar_Mascota, Actualizar_Propietario, Actualizar_Veterinario # Se importo los modulo que se encuentran dentro de la carpeta Actualizar_datos_Actores
 class Administrador:
     def __init__(self):
         pass
@@ -61,15 +62,14 @@ class Administrador:
             1. Veterinario
             2. Propietario
             3. Mascota""")
-        while True:
-            actor_seleccionado = input("Ingresa el numero del actor que desea actualizar: ")
-            if actor_seleccionado != ["1", "2","3"]:
+        actor_seleccionado = input("Ingresa el numero del actor que desea actualizar: ")
+        """     if actor_seleccionado != ["1", "2","3"]:
                 print("Error, ingresa una opcion valida (1,2,3)")
             else:
-                break
-        if actor_seleccionado == 1:
-            pass
+                break """
+        if actor_seleccionado == "1":
+            Actualizar_Veterinario.modificar_veterinario()
             
         
         
-
+Administrador.Actualizar_Datos()
