@@ -8,7 +8,7 @@ class Administrador:
     def Registrar_Veterinario(): # Metodo que se encarga de registrar un veterinario
         while True:
             # solicitar id de veterinario a registrar
-            id_veterinario = input("Ingresa el del veterinario: ")
+            id_veterinario = input("Ingresa ID del veterinario: ")
             if id_veterinario.isalpha() == True:
                 print("Ingresa solo caracteres numericos")
             elif len(id_veterinario) != 10:
@@ -30,6 +30,15 @@ class Administrador:
                 print("Error, ingresa un nombre correcto")
             else:
                 break
+            
+        while True:
+            arroa="@gmail.com"
+            correo_veterinario=input("Ingresa el correo electronico del veterinario: ")
+            if arroa not in correo_veterinario:
+                print("Ingresa el @gmail.com")
+            else:
+                break
+            
         while True:
             Direccion_veterinario = input("Ingresa la direccion de veterinario: ")
             if Direccion_veterinario.isnumeric()== True:
@@ -46,9 +55,10 @@ class Administrador:
                 break
         tarjeta_profesional_veterinario=tarjeta_Veterinario.tarjeta() # se almacena toda la información de la tarjeta en esta variable
         diccionario_veterinario={
-            "Id ": id_veterinario,
-            "Nombre ": nombre_veterinario,
+            "Id": id_veterinario,
+            "Nombre": nombre_veterinario,
             "Apellido": apellido_veterinario,
+            "Correo": correo_veterinario,
             "Direccion": Direccion_veterinario,
             "Telefono": telefono_veterinario,
             "tarjeta Profesional": tarjeta_profesional_veterinario,
@@ -62,14 +72,17 @@ class Administrador:
             1. Veterinario
             2. Propietario
             3. Mascota""")
-        actor_seleccionado = input("Ingresa el numero del actor que desea actualizar: ")
-        """     if actor_seleccionado != ["1", "2","3"]:
-                print("Error, ingresa una opcion valida (1,2,3)")
+        while True:
+            
+            actor_seleccionado = input("Ingresa el numero del actor que desea actualizar: ")
+            if actor_seleccionado != "1" and actor_seleccionado != "2" and actor_seleccionado!="3":
+                    print("Error, ingresa una opcion valida (1,2,3)")
             else:
-                break """
+                break 
         if actor_seleccionado == "1":
             Actualizar_Veterinario.modificar_veterinario()
             
         
-        
+    
+Administrador.Registrar_Veterinario()
 Administrador.Actualizar_Datos()
