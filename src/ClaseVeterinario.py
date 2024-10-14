@@ -10,22 +10,19 @@ class Mascota:
         
     def registrar_Mascota(self):
         id_mascota= "121" # se debe generar de manera random
-        if id_mascota in dt.ides_mascotas:
-            print(f"La mascota {self.nombre_mascota} ya fue registrada")
-        else:
-            diccionario_mascota ={
-                "ID":id_mascota,
-                "Nombre":f"{self.nombre_mascota}",
-                "Color": f"{self.color}",
-                "Especie": f"{self.especie}",
-                "Raza": f"{self.raza}",
-                "Propietario":self.propi['ID']
-            }
+        diccionario_mascota ={
+            "ID":id_mascota,
+            "Nombre":f"{self.nombre_mascota}",
+            "Color": f"{self.color}",
+            "Especie": f"{self.especie}",
+            "Raza": f"{self.raza}",
+            "Propietario":self.propi['ID']
+        }
 
-            dt.ides_mascotas.append(id_mascota)
-            self.propi['Mascota'] = diccionario_mascota["ID"]
-            dt.lista_Propietarios.append(self.propi)
-            dt.lista_Mascotas.append(diccionario_mascota)
+        dt.ides_mascotas.append(id_mascota)
+        self.propi['Mascota'] = diccionario_mascota["ID"]
+        dt.lista_Propietarios.append(self.propi)
+        dt.lista_Mascotas.append(diccionario_mascota)
 class Propietario:
     
     def __init__(self,id_Propietario = '',nombre_Propietario = '',apellidos_Propietario = '',direccion_Propietario = '',telefono_Propietario = '',correo_Propietario = '',mascota = {}):
