@@ -2,6 +2,11 @@
 import Datos as dt
 id_mascotas=[]
 id_propietarios=[]
+class Veterinario:
+    def __init__(self) -> None:
+        pass
+    def registrar_mascota():
+        pass
 class Mascota:
     def __init__(self, nombre_mascota="",color="", especie="", raza="",propi = {}):
         self.nombre_mascota= nombre_mascota
