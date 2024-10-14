@@ -1,2 +1,2 @@
-# Proyect_Veterinaria
-Proyecto de Veterinaria 
+#Proyecto Veterinaria
+Repositorio institucional del sena
