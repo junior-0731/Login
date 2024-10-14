@@ -62,12 +62,22 @@ class Propietario:
         self.mascota['Propietario'] = diccionaro_Propietario["ID"]
         dt.lista_Mascotas.append(self.mascota)
         dt.lista_Propietarios.append(diccionaro_Propietario)
-
+class Veterinario:
+    def __init__(self) -> None:
+        pass
 opcion = input('ELIGE UNA OPCION: ').upper()
 
-if opcion == 'A':
-    mascota1= Mascota('Lucas','Rojo','Perro','Pastor')
-    propietario1 = Propietario("1313", "juan", "herrera", "urrao", "313132", "cdsfdsd",mascota={'ID':'123','Nombre':mascota1.nombre_mascota,'Color':mascota1.color,'Especie':mascota1.especie,'Raza':mascota1.raza})
+if opcion == 'A': # Regitrar mascota
+    print('\nIngresa los datos de la mascota: ')
+    mascota1= Mascota(input('Nombre: '),input('Color: '),input('Especie: '),('Raza: ')) 
+    registrar_Asignar_Dueno = input('A.Asignar a duño existente\n B. Crear nuevo dueño \nDigita aqui: ').upper()
+    if registrar_Asignar_Dueno == 'B':
+        propietario1 = Propietario(input("ID: "), input("NOMBRES: "), input("APELLIDOS: "), ("DIRECCION: "), input("TELEFONO: "), input("CORREO: "),mascota={'ID':'123','Nombre':mascota1.nombre_mascota,'Color':mascota1.color,'Especie':mascota1.especie,'Raza':mascota1.raza})
+    elif registrar_Asignar_Dueno == 'A':
+        id_Propietario = input('ID: ')
+        while id_Propietario in dt.ides_propietarios:
+            id_Propietario = input('\nERROR EL ID INGRESADO YA SE ENCUETRA REGISTRADO EN EL SISTEMA\n INSGRESA DE NUEBO EL ID\n\nID: ')
+        propietario1 = Propietario(id_Propietario,mascota={'ID':'123','Nombre':mascota1.nombre_mascota,'Color':mascota1.color,'Especie':mascota1.especie,'Raza':mascota1.raza})
     
     mascota1= Mascota(propi={'ID':propietario1.id_Propietario,'Nombre':propietario1.nombre_Propietario,'Direccion':propietario1.direccion_Propietario,'Telefono':propietario1.telefono_Propietario,'Correo':propietario1.correo_Propietario})
     propietario1.registrar_Propietario()
