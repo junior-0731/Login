@@ -1,12 +1,5 @@
 #Todas las clases principales
 import Datos as dt
-id_mascotas=[]
-id_propietarios=[]
-class Veterinario:
-    def __init__(self) -> None:
-        pass
-    def registrar_mascota():
-        pass
 class Mascota:
     def __init__(self, nombre_mascota="",color="", especie="", raza="",propi = {}):
         self.nombre_mascota= nombre_mascota
@@ -16,7 +9,7 @@ class Mascota:
         self.propi = propi
         
     def registrar_Mascota(self):
-        id_mascota= "121" # se debe generar de manera random
+        id_mascota= "121" # Se debe generar de manera random
         diccionario_mascota ={
             "ID":id_mascota,
             "Nombre":f"{self.nombre_mascota}",
@@ -46,25 +39,6 @@ class Mascota:
             self.propi['Mascota'] = diccionario_mascota
             dt.lista_Propietarios.append(self.propi)
             dt.lista_Mascotas.append(diccionario_mascota)
-            
-            """ else:
-                agregar=True
-                agregar=input("Desea agregar propietario")=="si"
-                if agregar==True:
-                    diccionario_mascota ={
-                        "Nombre":f"{self.nombre_mascota}",
-                        "Color": f"{self.color}",
-                        "Especie": f"{self.especie}",
-                        "Raza": f"{self.raza}"
-                    }
-                    return diccionario_mascota
-                else:
-                    print("nada") """
-                
-            
-            
-        
-
 class Propietario:
     
     def __init__(self,id_Propietario = '',nombre_Propietario = '',apellidos_Propietario = '',direccion_Propietario = '',telefono_Propietario = '',correo_Propietario = '',mascota = {}):
@@ -83,15 +57,11 @@ class Propietario:
             'Direccion':self.direccion_Propietario,
             'Telefono':self.telefono_Propietario,
             'Correo':self.correo_Propietario,
-            'Mascota':self.mascota
+            'Mascota':self.mascota['ID']
         }
+        self.mascota['Propietario'] = diccionaro_Propietario["ID"]
         dt.lista_Mascotas.append(self.mascota)
         dt.lista_Propietarios.append(diccionaro_Propietario)
-
-
-
-
-
 
 opcion = input('ELIGE UNA OPCION: ').upper()
 
