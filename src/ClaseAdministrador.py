@@ -53,6 +53,7 @@ class Administrador:
                 print("Error, ingresa un numero telefonico valido, (de 10 digitos)")
             else:
                 break
+        print("\n   TARJETA PROFESIONAL \n")
         tarjeta_profesional_veterinario=tarjeta_Veterinario.tarjeta() # se almacena toda la información de la tarjeta en esta variable
         diccionario_veterinario={
             "Id": id_veterinario,
@@ -61,7 +62,7 @@ class Administrador:
             "Correo": correo_veterinario,
             "Direccion": Direccion_veterinario,
             "Telefono": telefono_veterinario,
-            "tarjeta Profesional": tarjeta_profesional_veterinario,
+            "tarjeta Profesional":[tarjeta_profesional_veterinario],
             "Mascotas": 0
             
             

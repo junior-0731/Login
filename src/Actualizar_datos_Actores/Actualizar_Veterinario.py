@@ -1,3 +1,4 @@
+import tarjeta_Veterinario
 import Datos as dt
 def modificar_veterinario():
     while True:
@@ -39,36 +40,24 @@ def modificar_veterinario():
                     print("Error, ingresa un numero telefonico valido, (de 10 digitos)")
                 else:
                     break
-            i["Telefono"]=nuevo_telefono 
-            i["Direccion"]= nueva_direccion
-            i["Correo"]=nuevo_correo
-                
-            #solicitar eliminación de mascota
             while True:
-                eliminar_mascota_v= input("Deseas eliminar una mascota del veterinario: ").lower()
-                if eliminar_mascota_v != "si" and eliminar_mascota_v !="no":
-                    print("Error, digita si/no")
+                mod_tarjeta_profesional= input("Desea agregar otra tarjeta profesional si/no: ").lower()
+                if mod_tarjeta_profesional != "si" and mod_tarjeta_profesional != "no":
+                    print("Error, ingresa si/no")
                 else:
                     break
-            if eliminar_mascota_v == "si": # si desea eliminar una mascota
-                if i["Mascotas"] == "" or i["Mascotas"]==0: # se verifica si tiene mascotas agregadas
-                    print("Este Veterinario no tiene mascotas") # en caso de que no se muestra este mensaje
-                    print("")
-                else:# en caso de que si tenga mascotas agregadas
-                    
-                    print("Mascotas de veterinario")
-                    print(i["Mascotas"])
-                    print("")
-                    while True:
-                        id_mascota_eliminar=input("ingresa el id de la mascota a eliminar: ")
-                        if id_mascota_eliminar not in i["Mascotas"]:
-                            print("Error, esa mascota no se encuentra.")
-                        else: 
-                            break
-                    i["Mascotas"].remove(id_mascota_eliminar)# gracias a la funcion remove puedo eliminar un valor especifico de una    clave
-                    print("")
+            if mod_tarjeta_profesional =="si":  
+                print("\n   TARJETA PROFESIONAL \n")
+                nueva_tarjeta_profesional_veterinario = tarjeta_Veterinario.tarjeta() # se llama la funcion tarjeta del modulo tarjeta_veterinario
+                i["Telefono"]=nuevo_telefono 
+                i["Direccion"]= nueva_direccion
+                i["Correo"]=nuevo_correo
+                i["tarjeta Profesional"].append(nueva_tarjeta_profesional_veterinario)
             else:
-                pass
+                i["Telefono"]=nuevo_telefono 
+                i["Direccion"]= nueva_direccion
+                i["Correo"]=nuevo_correo
+            
             print("Información actualizada")
             print("")
             print(i) # imprimira el diccionario de los datos del veterinario que se modifico
