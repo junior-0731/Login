@@ -83,8 +83,9 @@ class Propietario:
             'Direccion':self.direccion_Propietario,
             'Telefono':self.telefono_Propietario,
             'Correo':self.correo_Propietario,
-            'Mascota':self.mascota
+            'Mascota':self.mascota['ID']
         }
+        self.mascota['Propietario'] = diccionaro_Propietario["ID"]
         dt.lista_Mascotas.append(self.mascota)
         dt.lista_Propietarios.append(diccionaro_Propietario)
 
