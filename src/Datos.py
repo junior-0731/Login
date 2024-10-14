@@ -4,9 +4,9 @@ prop={
     "id": "1212121212"
 }
 #En este modulo se guardan todas las listas con los datos simulando una base de datos
-lista_Propietarios = [prop]
+lista_Propietarios = []
 lista_Mascotas = []
-lista_Veterinarios = [] 
+lista_Veterinarios = [prop] 
 
 #Listas que alamecenaran los ID
 ides_veterinarios=[]

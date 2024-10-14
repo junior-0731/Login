@@ -11,6 +11,6 @@ def modificar_veterinario():
             print("Error, ese veterinario ya fue registrado exitosamente")
         else:
             break
-    for i in dt.lista_Propietarios:
+    for i in dt.lista_Veterinarios:
         for j in i.values():
             print(j)

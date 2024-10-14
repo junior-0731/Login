@@ -17,6 +17,19 @@ class Mascota:
         
     def registrar_Mascota(self):
         id_mascota= "121" # se debe generar de manera random
+        diccionario_mascota ={
+            "ID":id_mascota,
+            "Nombre":f"{self.nombre_mascota}",
+            "Color": f"{self.color}",
+            "Especie": f"{self.especie}",
+            "Raza": f"{self.raza}",
+            "Propietario":self.propi['ID']
+        }
+
+        dt.ides_mascotas.append(id_mascota)
+        self.propi['Mascota'] = diccionario_mascota["ID"]
+        dt.lista_Propietarios.append(self.propi)
+        dt.lista_Mascotas.append(diccionario_mascota)
         if id_mascota in dt.ides_mascotas:
             print(f"La mascota {self.nombre_mascota} ya fue registrada")
         else:
@@ -80,7 +93,7 @@ class Propietario:
 
 
 
-opcion = input('ELIGE UNA OPCION: ')
+opcion = input('ELIGE UNA OPCION: ').upper()
 
 if opcion == 'A':
     mascota1= Mascota('Lucas','Rojo','Perro','Pastor')
