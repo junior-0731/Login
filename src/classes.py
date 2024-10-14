@@ -24,6 +24,9 @@ class Mascota:
                 "Propietario":self.propi
             }
             
+            dt.lista_Propietarios.append(self.propi)
+            dt.lista_Mascotas.append(diccionario_mascota)
+            
             """ else:
                 agregar=True
                 agregar=input("Desea agregar propietario")=="si"
@@ -62,6 +65,7 @@ class Propietario:
             'Correo':self.correo_Propietario,
             'Mascota': self.mascota
         }
+        dt.lista_Mascotas.append(self.mascota)
         dt.lista_Propietarios.append(diccionaro_Propietario)
 
 
@@ -77,16 +81,14 @@ if opcion == 'A':
     
     mascota1= Mascota(propi={'ID':propietario1.id_Propietario,'Nombre':propietario1.nombre_Propietario,'Direccion':propietario1.direccion_Propietario,'Telefono':propietario1.telefono_Propietario,'Correo':propietario1.correo_Propietario})
     propietario1.registrar_Propietario()
-    mascota1.registrar_Mascota()
     
     
     
 elif opcion == 'B':
     propietario1 = Propietario("1313", "edier", "Guerra","Medeliin", "1313", "qdcsc")
-    mascota1= Mascota("lucas", "red", "perro", "pastor", propi={propietario1.id_Propietario, propietario1.nombre_Propietario, propietario1.apellidos_Propietarios, propietario1.direccion_Propietario, propietario1.telefono_Propietario, propietario1.correo_Propietario})
+    mascota1= Mascota("lucas", "red", "perro", "pastor", propi={"ID":propietario1.id_Propietario, "Nombre":propietario1.nombre_Propietario, "Apellidos":propietario1.apellidos_Propietarios, "Direccion":propietario1.direccion_Propietario, "Telefono":propietario1.telefono_Propietario,"Correo": propietario1.correo_Propietario})
     
     propietario1 = Propietario(id_Propietario="1313", nombre_Propietario="edier", apellidos_Propietario="Guerra",direccion_Propietario="Medeliin", telefono_Propietario="1313",correo_Propietario="qdcsc",mascota={"Nombre":mascota1.nombre_mascota, "Color":mascota1.color, "Especie": mascota1.especie,"Raza": mascota1.raza})
-    propietario1.registrar_Propietario()
     mascota1.registrar_Mascota()
 
 print(dt.lista_Propietarios)
