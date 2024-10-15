@@ -1,7 +1,9 @@
+from . import Actualizar_Mascota
 import Datos # se importo el modulo Datos
 #import re # se importo el modulo re para las expresiones regulares
 import tarjeta_Veterinario # se importa este modulo que se encarga de solicirar la tarjeta profesional
-from Actualizar_datos_Actores import Actualizar_Mascota, Actualizar_Propietario, Actualizar_Veterinario # Se importo los modulo que se encuentran dentro de la carpeta Actualizar_datos_Actores
+from Actualizar_datos_Actores import Actualizar_Propietario, Actualizar_Veterinario # Se importo los modulo que se encuentran dentro de la carpeta Actualizar_datos_Actores
+import Asignacion_mascota # Modulo que nos ayuda a que el admin pueda asignar una mascota a un veterinario
 class Administrador:
     def __init__(self):
         pass
@@ -68,22 +70,26 @@ class Administrador:
             
         }
         Datos.lista_Veterinarios.append(diccionario_veterinario) # agregar toda la informacion de registreo del veterinario  la lista con todos los veterinarios
-    def Actualizar_Datos():
+    def Actualizar_Datos(): #METODO ACTUALIZAR DATOS
         print("""ACTORES
             1. Veterinario
             2. Propietario
-            3. Mascota""")
+        """)
         while True:
-            
             actor_seleccionado = input("Ingresa el numero del actor que desea actualizar: ")
-            if actor_seleccionado != "1" and actor_seleccionado != "2" and actor_seleccionado!="3":
-                    print("Error, ingresa una opcion valida (1,2,3)")
+            if actor_seleccionado != "1" and actor_seleccionado != "2":
+                    print("Error, ingresa una opcion valida (1,2)")
             else:
                 break 
         if actor_seleccionado == "1":
-            Actualizar_Veterinario.modificar_veterinario()
+            Actualizar_Veterinario.modificar_veterinario() # se hace el llamado del modulo Actualizar_Veterinario
+        elif actor_seleccionado =="2":
+            Actualizar_Propietario.modificar_propietario() # se hace llamdo de el modulo Actualizar_Propietario
+            
+    def asignacion_mascota(): # METODO ASIGNAR MASCOTA
+        Asignacion_mascota.modificar_mascota() # llamar modulo que contiene la funcion que se encarga de asignar una mascota a un veterinario #FALTA POR ACABAR    LE CORRESPONDE A CAMILO
+            
             
         
-    
-Administrador.Registrar_Veterinario()
-Administrador.Actualizar_Datos()
+
+
