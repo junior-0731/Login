@@ -1,5 +1,5 @@
 import Datos # se importo el modulo Datos
-#import re # se importo el modulo re para las expresiones regulares
+import tarjeta_Veterinario
 from Actualizar_datos_Actores import Actualizar_Propietario, Actualizar_Veterinario # Se importo los modulo que se encuentran dentro de la carpeta Actualizar_datos_Actores
 import Asignacion_mascota # Modulo que nos ayuda a que el admin pueda asignar una mascota a un veterinario
 import Ver_mascotas # modulo que permite visualizar las mascotas de un veterinario
