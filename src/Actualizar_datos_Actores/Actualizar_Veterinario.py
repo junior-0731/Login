@@ -61,8 +61,3 @@ def modificar_veterinario():
             print("Información actualizada")
             print("")
             print(i) # imprimira el diccionario de los datos del veterinario que se modifico
-            
-    print("")
-    print(dt.lista_Veterinarios)
-        
-        

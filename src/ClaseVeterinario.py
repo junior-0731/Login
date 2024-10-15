@@ -34,7 +34,9 @@ class Mascota: #CONVERTIR ESTA CLASE A LOS METODOS DEL VETERINARIO
                 "Color": f"{self.color}",
                 "Especie": f"{self.especie}",
                 "Raza": f"{self.raza}",
-                "Propietario":self.propi['ID']
+                "Propietario":self.propi['ID'],
+                "Veterinario": "1212122112"
+                #FALTA AGREGAR ID DE VETERINARIO
             }
             
             self.propi['Mascota'] = diccionario_mascota

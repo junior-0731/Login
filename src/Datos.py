@@ -2,7 +2,6 @@
 lista_Propietarios = []
 lista_Mascotas = []
 lista_Veterinarios = [] 
-
 #Listas que alamecenaran los ID
 ides_veterinarios=[]
 ides_mascotas=[]
