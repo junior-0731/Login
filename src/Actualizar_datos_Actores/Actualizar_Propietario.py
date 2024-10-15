@@ -29,7 +29,7 @@ def modificar_propietario(): # funcion que actualiza los datos del propietario
                     print("Ingresa el @gmail.com")
                 else:
                     break
-            #Reemplazar los valores de las claves
+            #Reemplazar los valores de las claves del diccionario 
             i["Direccion"]=nueva_direccion
             i["Telefono"]=nuevo_telefono
             i["Correo"]= nuevo_correo
