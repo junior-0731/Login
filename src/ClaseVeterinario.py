@@ -68,7 +68,7 @@ class Veterinario:
         pass
 opcion = input('ELIGE UNA OPCION: ').upper()
 
-if opcion == 'A': # Regitrar mascota
+if opcion == 'A': # Registrar mascota
     print('\nIngresa los datos de la mascota: ')
     mascota1= Mascota(input('Nombre: '),input('Color: '),input('Especie: '),('Raza: ')) 
     registrar_Asignar_Dueno = input('A.Asignar a duño existente\n B. Crear nuevo dueño \nDigita aqui: ').upper()
@@ -85,7 +85,7 @@ if opcion == 'A': # Regitrar mascota
     
     
     
-elif opcion == 'B':
+elif opcion == 'B':#Registrar Propietario
     propietario1 = Propietario("1313", "edier", "Guerra","Medeliin", "1313", "qdcsc")
     mascota1= Mascota("lucas", "red", "perro", "pastor", propi={"ID":propietario1.id_Propietario, "Nombre":propietario1.nombre_Propietario, "Apellidos":propietario1.apellidos_Propietarios, "Direccion":propietario1.direccion_Propietario, "Telefono":propietario1.telefono_Propietario,"Correo": propietario1.correo_Propietario})
     
