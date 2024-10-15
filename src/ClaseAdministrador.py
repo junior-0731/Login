@@ -1,9 +1,9 @@
-from . import Actualizar_Mascota
 import Datos # se importo el modulo Datos
 #import re # se importo el modulo re para las expresiones regulares
 import tarjeta_Veterinario # se importa este modulo que se encarga de solicirar la tarjeta profesional
 from Actualizar_datos_Actores import Actualizar_Propietario, Actualizar_Veterinario # Se importo los modulo que se encuentran dentro de la carpeta Actualizar_datos_Actores
 import Asignacion_mascota # Modulo que nos ayuda a que el admin pueda asignar una mascota a un veterinario
+import Ver_mascotas # modulo que permite visualizar las mascotas de un veterinario
 class Administrador:
     def __init__(self):
         pass
@@ -88,6 +88,11 @@ class Administrador:
             
     def asignacion_mascota(): # METODO ASIGNAR MASCOTA
         Asignacion_mascota.modificar_mascota() # llamar modulo que contiene la funcion que se encarga de asignar una mascota a un veterinario #FALTA POR ACABAR    LE CORRESPONDE A CAMILO
+        
+    def Ver_mascotas_Veteriario(): # METODO DE VISUALIZAR MASCOTAS DE VETERINARIO
+        Ver_mascotas.ver_mascotas_V()
+        
+Administrador.Ver_mascotas_Veteriario()
             
             
         
