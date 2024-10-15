@@ -1,6 +1,5 @@
 import Datos # se importo el modulo Datos
 #import re # se importo el modulo re para las expresiones regulares
-import tarjeta_Veterinario # se importa este modulo que se encarga de solicirar la tarjeta profesional
 from Actualizar_datos_Actores import Actualizar_Propietario, Actualizar_Veterinario # Se importo los modulo que se encuentran dentro de la carpeta Actualizar_datos_Actores
 import Asignacion_mascota # Modulo que nos ayuda a que el admin pueda asignar una mascota a un veterinario
 import Ver_mascotas # modulo que permite visualizar las mascotas de un veterinario
@@ -8,6 +7,7 @@ class Administrador:
     def __init__(self):
         pass
     def Registrar_Veterinario(): # Metodo que se encarga de registrar un veterinario
+        print("\nREGISTRAR VETERINARIO\n")
         while True:
             # solicitar id de veterinario a registrar
             id_veterinario = input("Ingresa ID del veterinario: ")
@@ -69,7 +69,9 @@ class Administrador:
             
             
         }
-        Datos.lista_Veterinarios.append(diccionario_veterinario) # agregar toda la informacion de registreo del veterinario  la lista con todos los veterinarios
+        Datos.lista_Veterinarios.append(diccionario_veterinario) # agregar toda la informacion de registro del veterinario  la lista con todos los veterinarios
+        print("\n VETERINARIO REGISTRADO EXITOSAMENTE\n")
+        print(diccionario_veterinario)
     def Actualizar_Datos(): #METODO ACTUALIZAR DATOS
         print("""ACTORES
             1. Veterinario
@@ -92,7 +94,7 @@ class Administrador:
     def Ver_mascotas_Veteriario(): # METODO DE VISUALIZAR MASCOTAS DE VETERINARIO
         Ver_mascotas.ver_mascotas_V()
         
-Administrador.Ver_mascotas_Veteriario()
+Administrador.Registrar_Veterinario()
             
             
         

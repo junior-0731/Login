@@ -1,4 +1,4 @@
-import tarjeta_Veterinario
+import tarjeta_Veterinario as tarjeta_Veterinario
 import Datos as dt
 def modificar_veterinario():
     while True:

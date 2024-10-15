@@ -6,29 +6,29 @@ def tarjeta(): # aca ira toda la informacion que se necesitara solicitar al vete
         "Nombre instituto":"",
         "Año":""
     }
-    nombre_veterinario=input("Ingresa el nombre del veterinario: ")
+    nombre_veterinario=input("Ingresa el nombre del veterinario: ").strip()
     while True: 
-        especialidad=input("Ingresa la especialidad: ")
+        especialidad=input("Ingresa la especialidad: ").strip()
         if especialidad.isalpha()==False:
             print("Error, ingresa solo str")
         else:
             break
         
     while True: 
-        nombre_instituto=input("Ingresa el nombre del instituto: ")
-        if nombre_instituto.isalpha()==False:
+        nombre_instituto=input("Ingresa el nombre del instituto: ").strip()
+        if nombre_instituto.isnumeric()==True:
             print("Error, ingresa solo str")
         else:
             break
         
     while True: 
-        Año=input("Ingresa el año de certificación: ")
+        Año=input("Ingresa el año de certificación: ").strip()
         if Año.isnumeric()==False:
             print("Error, ingresa solo numeros")
         else:
             break
     while True: 
-        nombre_titulo=input("Ingresa el titulo: ")
+        nombre_titulo=input("Ingresa el titulo: ").strip()
         if nombre_titulo.isalpha()==False:
             print("Error, ingresa solo str")
         else:
