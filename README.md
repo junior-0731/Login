@@ -1,2 +1,4 @@
-#Proyecto Veterinaria
-Repositorio institucional del equipo CJE-TEC, estudiantes del SENA en el centro de los Recursos Renobables la Salada Caldas
+## Proyecto Veterinaria
+La vaterinaria feliz contrata al equipo CJE.TEC para que este realize un sistema que le permita manejar de manera eficiente los datos de sus clientes y trabajadores
+
+
